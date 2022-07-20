@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=2lCZzdd8abf31noNb-5xHbuoEY3-_scR4zBKxKWLpY9s_1CnTDZwhEal1QxDX-upS9cljQmAdWL1w9LpWnxpRfKg-wsqJXy6T_qq8mR-lfQj-ITZfJiGuHHnFLjbUXEtbAjTdc_uUZOHQt1oZTMDYsdISUa15VpFOjzwhhbvImLHk-FhblLWEE4qZfaZSgBZMbFXEzSd-HxEpVOgJ83Dtqr6RGTwYp091RP0wEltjnk2TUg2WIwMjgMuRWT9S6ELr76re9mhpkd_6a4O0sPhaYqCZ0FJA54R7yqJTP3t9_Ee4eSkCKxkKstJZcIYFH5kCurZcBL5k81SacTDHMMMFFXTCQW92zJfPnCbrxy0MtxFpi1xvTd46Hahi09GEQ6BVn4mxLfk3WyI0i21tHLl3q2OGnOpcbfqrG9CWbyt_rc6shNjeOSlGQ_nIkDp12Xrivui9z9DZf_W4feNQ1guog" charset="UTF-8"></script><style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float:left;
+ vertical-align:center;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:grey;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+   background-image: url("images/bk.jpg");
+   background-size:cover;
+   background-repeat:repeat;
+   }
+   
+    img{
+  
+  border: 1px solid;
+  padding: 15px;
+  box-shadow: 5px 10px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  
+  right:0;
+  background-color:rgb(0, 0, 0,0.8);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 125px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color:  #808080;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.amencontent{
+align: center;
+}
+
+.glow {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 5 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+
+
+
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 190px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transform: scale(1.1);
+  }
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+
+</head>
+<body>
+<b><div style="align:center;font-family:barabara;">
+
+
+<ul>
+  <li><a href="a.html" class="brand"><img src="images\logo.png" width="125" height="100"alt="logo"></a></li>
+  <li  style="margin-top:34px"><a  href="home.html">HOME</a></li>
+  <li  style="margin-top:34px"><a  href="our.html">OUR RESORT</a></li>
+  <li  style="margin-top:34px"><a  href="stay.html">STAY</a></li>
+  <li  style="margin-top:34px"><a  href="dine.html">DINE</a></li>
+  <li  style="margin-top:34px"><a  href="events.html">EVENTS</a></li>
+  <li  style="margin-top:34px"><a  href="activities.html">ACTIVITIES</a></li>
+  <li  style="margin-top:34px"><a  href="amenities.html">AMENITIES</a></li>
+  <li  style="margin-top:34px"><a  href="gallery.html">GALLERY</a></li>
+  <li  style="margin-top:34px"><a  href="/hms11/booking">BOOKING</a></li>
+   <li  style="margin-top:34px"><a  href="/hms11/register">REGISTER</a></li>
+    <li  style="margin-top:34px"><a  href="/hms11/login">LOGIN</a></li>
+  <li  style="margin-top:34px"><a  href="aboutus.html">ABOUT US</a></li>
+  <li  style="margin-top:34px"><a href="contact.html">CONTACT</a></li>
+  <li  style="margin-top:34px"><a href="services.html">SERVICES</a></li>
+  <li  style="margin-top:34px"><a href="customer-review.html">REVIEWS</a></li>
+  <li  style="margin-top:34px"><a href="faq.html">FAQ's</a></li>
+  
+ 
+ 
+  
+</div>
+  </li> 
+  <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  //document.getElementById("main").style.marginLeft = "600px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+ // document.getElementById("main").style.marginLeft= "0";
+}
+</script> 
+</ul>
+</div></b>
+
+
+<p style="font-color:BLACK;font-size:14px;"><B><marquee behavior="scroll" direction="LEFT" scrollamount="18">AS  PER  GOVERNEMENT  GUIDELINES, OUR SWIMMING POOLS,GYM AND SOME
+ OF THE ACTIVITIES ARE CLOSED UNTIL FURTHER NOTICE.GET VACCINATED,STAY SAFE AND FIGHT THE PANDEMIC TOGETHER.</b></MARQUEE></P>
+
+
+
+
+
+<div>
+
+<div class="slideshow-container" >
+
+<div class="mySlides fade" >
+  <div class="numbertext">1 / 3</div>
+  <img src="images\a1.jpg" style="width:100%">
+  <div class="text" border="1px solid"><p style=" font-size:75px ;; color:white;"><h1 class="glow"> 3 PETALS BEACH RESORT</p></p></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="images\a5.jpg" style="width:100%">
+  <div class="text"><p style="font-size:75px ;; color:white;"><h1 class="glow"> 3 PETALS BEACH RESORT</p></p></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="images\a4.jpg" style="width:100%">
+  <div class="text"><p style="font-size:75px ;; color:white;"><h1 class="glow"> 3 PETALS BEACH RESORT</p></p><p style="font-size:10px ;; color:white;">  </p></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div> 
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</div>
+
+<div style="text-align:center;text-align-content:center;text-shadow: 0.5px 0.5px blue;">
+<p><h1><marquee behavior="scroll" direction="right" scrollamount="12">WELCOME TO 3 PETALS BEACH RESORT</marquee></h1></p></div>
+</div>
+<div style="text-align:justify;text-justify: inter-word;font-size:20px;text-shadow: 0.5px 2.7px PINK;">
+<i><b><center><h2>AMINITIES</h2></center></b></i><br></DIV>
+
+
+<p style ="font-size:20px; text-align:justify;text-justify: inter-word; padding-left:55px;padding-right:35px">A hotel's amenities are those 
+little extras that make your stay much more enjoyable. When you book a hotel, it's not just about finding a place to sleep. It's 
+about providing yourself with a getaway, complete with the features that'll make your stay a pleasant and memorable experience. Our 
+resort has lavish amenities which are always loved by our customers.  </p> <br>
+<DIV STYLE="PADDING-LEFT:40PX;PADDING-RIGHT:40PX;">
+<table style="width:100%; margin:0 auto; font-size: 17px">
+<tr >   
+    <td width="25%">
+    	<div style=" padding-left:20px; padding-right:20px; "><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\swimmingpool.png" width="550" height="300">
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	<td width="85%">
+    	<div style=" padding-left:20px; padding-right:50px; color:black;text-shadow:1px 1.5px grey;" > <h3><span> </span>                  <strong>SWIMMING POOL</strong> </div>
+                  </h3>
+		<div>		  
+         <p style="text-align:justify;text-justify: inter-word; padding-left:20px; padding-right:80px;">The swimming pool is a big attraction at our Resort and this temperature-controlled pool ensures the fun throughout the year. Begin your day with a fresh splash or soak your stress away at the end of a busy day with a refreshing dip in our swimming pool.</p>        			
+       </div>
+	</td>   
+</tr></table>
+
+
+
+
+
+
+
+
+
+<table style="width:100%; margin:0 auto; font-size: 17px">
+<tr >
+   <td width="85%" >
+	<div style=" padding-left:20px; padding-right:20px; color:black;text-shadow:1px 1.5px grey;"><br> <h3><span> </span>                  <strong>GYM</strong> 
+                  </h3></div>
+				  <div>
+         <p style=" padding-left:20px; padding-right:20px; text-align:justify;text-justify: inter-word;">Our gym comes with all the possible equipment to help you stay fit and toned. Purpose of a gym is to help you learn new exercises, techniques and training methods to meet your weight-loss, muscle building, heart health or sports performance goals. Come and try our gym at any time.</p>        			
+       </div>
+	</td> 
+	<td width="25%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:50px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\gym.png" width="550" height="300">
+	</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+</tr></table>
+
+
+<table style="width:100%; margin:0 auto;font-size: 17px">
+<tr >   
+    <td width="25%">
+    	<div style=" padding-left:20px; padding-right:20px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\recreationalroom.png" width="550" height="300">
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	<td width="85%">
+    	<div style=" padding-left:20px; padding-right:50px;color:black;text-shadow:1px 1.5px grey;" > <h3><span> </span>                  <strong>RECREATIONAL ROOM</strong> 
+                  </h3></div>
+				  <div>
+         <p style=" padding-left:20px; padding-right:80px; text-align:justify;text-justify: inter-word;">The Resort has a recreational room with a pool table, foosball and much more for those who want spend time with friends and take it easy. Come here and expolre our resort games with your family and friends.</p>        			
+       </div>
+	</td>   
+</tr></table>
+
+
+
+<table style="width:100%; margin:0 auto; font-size: 17px">
+<tr >   
+    <td width="85%" >
+	<div style=" padding-left:20px; padding-right:20px;color:black;text-shadow:1px 1.5px grey;"><br> <h3><span> </span>                  <strong>KIDS ACTIVITY ROOM</strong> 
+                  </h3></div>
+				  <div>
+         <p style=" padding-left:20px; padding-right:20px; text-align:justify;text-justify: inter-word;">Our kidâ€™s activity room will keep your child creatively engaged while the adults get some time on their own. Encourage your kids to spend their time and enjoy one of our favourite amenity of customers.</p>        			
+       </div>
+	</td> 
+	<td width="25%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:50px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\kidsactivity.png" width="550" height="300">
+	</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+</tr></table>
+
+
+<table style="width:100%; margin:0 auto; font-size: 17px">
+<tr >   
+    <td width="25%">
+    	<div style=" padding-left:20px; padding-right:20px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\outdoorgames.png" width="550" height="300">
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	<td width="85%">
+    	<div style=" padding-left:20px; padding-right:50px;color:black;text-shadow:1px 1.5px grey;" > <h3><span> </span>                  <strong>OUTDOOR GAMES</strong> 
+                  </h3></div>
+				  <div>
+         <p style=" padding-left:20px; padding-right:80px; text-align:justify;text-justify: inter-word;">Team-building just got a lot more enjoyable. At 3 Petals Beach Resort, we have a large playground, perfect for cricket, badminton, volleyball and more. Enjoy team-building activities and have fun with friends at our resort.</p>        			
+       </div>
+	</td>   
+</tr></table>
+
+
+
+<table style="width:100%; margin:0 auto; font-size: 17px">
+<tr >   
+    <td width="85%" >
+	<div style=" padding-left:20px; padding-right:20px;color:black;text-shadow:1px 1.5px grey;"><br> <h3><span> </span>                  <strong>SPA</strong></div> 
+                  </h3>
+				  <div>
+         <p style=" padding-left:20px; padding-right:20px; text-align:justify;text-justify: inter-word;">A selection of well-loved spa packages to refresh and rejuvenate the mind and body. Come and explore all kind of hairstyles, make-ups , etc. You can also have the different type of massages which is newly introduced in our resort.</p>        			
+       </div>
+	</td> 
+	<td width="25%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:50px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\spa.png" width="550" height="300">
+	</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+</tr></table>
+<br><br>
+
+<table style="width:100%; margin:0 auto; font-size: 17px">
+<tr >   
+    <td width="25%">
+    	<div style=" padding-left:20px; padding-right:20px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\a5.jpg" width="550" height="300">
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	<td width="85%">
+    	<div style=" padding-left:20px; padding-right:50px;color:black;text-shadow:1px 1.5px grey;" > <h3><span> </span>                  <strong>PET FRIENDLY</strong> 
+                  </h3></div>
+				  <div>
+         <p style=" padding-left:20px; padding-right:80px; text-align:justify;text-justify: inter-word;">Who doesn't love to go on vacation with their dog?.YES this can happen At 3 Petals Beach Resort,
+		 we have a large playground, seperate area for dog gromming and sleep room if u want and many more. Enjoy your quality time with your FUR-FRIEND 
+		  at our resort.</p>        			
+       </div>
+	</td>   
+</tr></table>
+
+</DIV>
+<br><br>
+<b><hr></b>
+
+
+<H2><p><center>OUR FACILITIES</CENTER></P></H2>
+
+<table style="width:100%; margin:0 auto;">
+<tr >   
+    <td width="45%" valign="top" style="">
+    	<div style=" padding-left:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\g2.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:20px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\bg9.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:10px; padding-right:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\bg3.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	<td width="45%" valign="top" style="">
+    	<div style=" padding-left:35px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\e1.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:30px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\bg12.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	
+</tr></table><br><br><br><br>
+
+<div style="text-align:center;;align-content: cnter;background-color:black "  > <br><br>
+<img style="align:center" src="images\logo.png" width="250" height="250" alt="logo">
+ 
+  <p style="color:white;">COPYRIGHT Â© 2021, ALL RIGHTS RESERVED ,3 Petals Beach Resort</p>
+<p style="font-size:50px ;; color:white;"> COPYRIGHT Â© 2021, 3 Petals Beach Resort</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

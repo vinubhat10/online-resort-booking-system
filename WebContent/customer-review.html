@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=IzzyjCTQ0gX5bsLIJskbri0ydHqPxffCe-f6LWCq_r_8f73WKipJpYDU2c72g2z02l2Z_cjOOheXF8B9A_gLIPBKVtNoE8NkjlC3qHCTjFuf5hpx-xoFTD7SdnlsiTc9mCZ61j7S4WNAVzJBEm-YNzpCnl5ULWYtKIzC_eEde4TU_zA_mt4nm2BqxkirW7b547W7_9Et-cnNS-dHd-Ynf8kPWSYdiYqJARqJQAI99A1oT0gUQ6mCQuuGt9sSuj1indrTAJE6aM3RKvwMOI2vtWWZhJj0nqxkICF85gQupX-GzDTB7rbq5effS8BLfdIkGsN5rPyZiYP0Dn9pWi82xQ" charset="UTF-8"></script><style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float:left;
+ vertical-align:center;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: grey;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+   background-image: url("bk.jpg");
+   background-size:cover;
+   background-repeat:repeat;
+   }
+   
+   img{
+   border: 1px solid black;
+   border-style:inset;
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  
+  right:0;
+  background-color:rgb(0, 0, 0,0.8);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 125px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color:  #808080;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.amencontent{
+align: center;
+}
+
+.glow {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 5 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+
+
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 190px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+}
+.testimonials{
+  padding: 40px 0;
+  background-image: url("bk.jpg");
+   background-size:cover;
+   background-repeat:repeat;
+  text-align: center;
+}
+.inner{
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.border{
+  width: 160px;
+  height: 5px;
+  background: #6ab04c;
+  margin: 26px auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.col{
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.testimonial{
+  background: #fff;
+  padding: 30px;
+}
+.testimonial img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.name{
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.stars{
+  color: #6ab04c;
+  margin-bottom: 20px;
+}
+
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transform: scale(1.1);
+  }
+
+@media screen and (max-width:960px) {
+.col{
+  flex: 100%;
+  max-width: 80%;
+}
+}
+
+@media screen and (max-width:600px) {
+.col{
+  flex: 100%;
+  max-width: 100%;
+}
+}
+</style>
+<%String isAdmin1="false";
+ if(null != session.getAttribute("isAdmin") )
+ isAdmin1=(String)session.getAttribute("isAdmin"); 
+ System.out.println("is admin +++++++++++++++++++++++++++++++++++++++++++"+isAdmin1); 
+ %>
+</head>
+<body>
+<b><div style="align:center;font-family:barabara;">
+
+
+<ul>
+  <li><a href="index.html" class="brand"><img src="D:\resort\images\logo.png" width="125" height="100"alt="logo"></a></li>
+  <li  style="margin-top:34px"><a  href="home.html">HOME</a></li>
+  <li  style="margin-top:34px"><a  href="our.html">OUR RESORT</a></li>
+  <li  style="margin-top:34px"><a  href="stay.html">STAY</a></li>
+  <li  style="margin-top:34px"><a  href="dine.html">DINE</a></li>
+  <li  style="margin-top:34px"><a  href="events.html">EVENTS</a></li>
+  <li  style="margin-top:34px"><a  href="activities.html">ACTIVITIES</a></li>
+  <li  style="margin-top:34px"><a  href="amenities.html">AMENITIES</a></li>
+  <li  style="margin-top:34px"><a  href="gallery.html">GALLERY</a></li>
+  <li  style="margin-top:34px"><a  href="/hms11/booking">BOOKING</a></li>
+   <li  style="margin-top:34px"><a  href="/hms11/register">Register</a></li>
+    <li  style="margin-top:34px"><a  href="/hms11/login">login</a></li>
+  <li  style="margin-top:34px"><a  href="aboutus.html">ABOUT US</a></li>
+  <li  style="margin-top:4px"><a   href="home.html"> <div id="main"><button class="openbtn" onclick="openNav()">â°</button> 
+ 
+  <%if(isAdmin1 != null && isAdmin1.equals("true")){%>
+	  <li  style="margin-top:34px"><a  href="Vacant.jsp">Vacant Room</a></li>
+   <% }%>
+  
+</div><div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Ã</a>
+  <a href="contact.html">CONTACT</a>
+  <a href="services.html">SERVICES</a>
+  <a href="customer-review.html">CUSTOMER REVIEWS</a>
+  <a href="faq.html">FAQ's</a>
+</div>
+  </li> 
+  <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  //document.getElementById("main").style.marginLeft = "600px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+ // document.getElementById("main").style.marginLeft= "0";
+}
+</script> 
+</ul>
+</div></b>
+
+
+
+
+<p style="font-color:BLACK;font-size:14px;"><B><marquee behavior="scroll" direction="LEFT" scrollamount="18">AS  PER  GOVERNEMENT  GUIDELINES, OUR SWIMMING POOLS,GYM AND SOME
+ OF THE ACTIVITIES ARE CLOSED UNTIL FURTHER NOTICE.GET VACCINATED,STAY SAFE AND FIGHT THE PANDEMIC TOGETHER.</b></MARQUEE></P>
+
+
+
+
+<div>
+
+<div class="slideshow-container" >
+
+<div class="mySlides fade" >
+  <div class="numbertext">1 / 3</div>
+  <img src="D:\resort\images\ev12.jpg" style="width:100%">
+  <div class="text" border="1px solid"><p style=" font-size:75px ;; color:white;"><h1 class="glow"> 3 PETALS BEACH RESORT</p></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="D:\resort\images\g1.jpg" style="width:100%">
+  <div class="text"><p style="font-size:75px ;; color:white;"><h1 class="glow"> 3 PETALS BEACH RESORT</p></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="D:\resort\images\g2.jpg" style="width:100%">
+  <div class="text"><p style="font-size:75px ;; color:white;"><h1 class="glow"> 3 PETALS BEACH RESORT</p></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div> 
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</div>
+
+<div >
+    <div class="testimonials">
+      <div class="inner">
+        <h1 style = "text-shadow:2px 2px 3px black;">CUSTOMER REVIEW'S</h1>
+        <div class="border"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="testimonial">
+             <img src="D:\resort\images\u.jpg">
+              <div class="name">Mr.Rahul Pandya</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p>
+                "I just want to comment on how outstanding our stay was at this resort 13-14 November. The rooms, facilities were excellent. From the floral garland arrival to the tour of the property, discussions of the sustainability programs, to the meals, cooking with the chef , the games activities, dancing demonstration and the historic videos. everything was perfect. Nimisha and Basheer were great hosts - all the staff made our stay very special. We have been raving about it to all our friends - encouraging them to come to your marvellous resort. Thankyou so much."
+              </p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="testimonial">
+             <img src="D:\resort\images\u.jpg">
+              <div class="name">Mrs.Rama Lakshmi</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                "Cleanliness and some more activities should be provided. Restaurant rates bit high compared to other. There could have been more options in food menu. Location and staff was nice."</br></br></br></br></br></br></br></br></br></br></br>
+              </p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="testimonial">
+              <img src="D:\resort\images\u.jpg">
+              <div class="name">Mr.Venu Gopal</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                "We thoroughly enjoyed our stay. The staffs were always motivated to help us. The food was excellent, the chef ensured that our pallet needs were met. The hotel ambience was lovely & very serene. We look forward to coming back. Feel very revitalized after spa treatments at Maya Spa."</br></br></br></br></br></br></br></br>
+              </p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="testimonial">
+             <img src="D:\resort\images\u.jpg">
+              <div class="name">Mr.Chatterjee</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p>
+                "Best and perfect destination resort in Goa. They served well and we liked the interior as well as breakfast. Location, cleanliness, food 5/5."</br></br></br></br></br></br></br></br></br></br></br></br>
+              </p>
+            </div>
+          </div>
+
+
+          <div class="col">
+            <div class="testimonial">
+              <img src="D:\resort\images\u.jpg">
+              <div class="name">Mrs.Sheela Sharma</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                "It was a good stay! The food was excellent and the staff superb! There was a staff member who was particularly helpful, accommodating and shared his knowledge about Prague with us. Unfortunately I did not get his name but it appeared he assisted the front desk and also carried our luggage to our room."</br></br></br></br></br></br></br></br>
+              </p>
+            </div>
+          </div>
+
+   <div class="col">
+            <div class="testimonial">
+            <img src="D:\resort\images\u.jpg">
+              <div class="name">Mr.Vishnu Reddy</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                "Ambience of the resort is really nice. Some improvement in the food is required otherwise all good."</br></br></br></br></br></br></br></br></br></br></br></br></br>
+              </p>
+            </div>
+          </div>
+
+   <div class="col">
+            <div class="testimonial">
+          <img src="D:\resort\images\u.jpg">
+              <div class="name">Mr.Sujay N</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+
+              <p>
+                "We had a very memorable visit to the hotel. Staff was helpful; hotel common areas and rooms were neat; food was tasty and variety was good; WiFi was effective. The hotel arranged for all our sight-seeing. I will recommend this hotel any time.
+
+"</br></br></br></br></br></br></br></br></br></br>
+              </p>
+            </div>
+          </div>
+
+<div class="col">
+            <div class="testimonial">
+            <img src="D:\resort\images\u.jpg">
+              <div class="name">Mr.Vanraj Shah</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                "This is my second stay at this resort .Perfect resort,services & arrangements.Its beautifull garden views,nice room and cool place.The staff was very helpful and friendly especially Mr.Rajesh .The food was very tasty .This resort is the prefect place if you are looking for romantic holiday. Overall a great place to stay.We planned to visit again next year. Of course will recommend to other friends and relatives."</br></br></br></br></br>
+              </p>
+            </div>
+          </div>
+
+<div class="col">
+            <div class="testimonial">
+              <img src="D:\resort\images\u.jpg">
+              <div class="name">Mrs.Reena Tandon</div>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+
+              <p>
+                "I had a very bad experience. The staff was very rude to me. There was no hot water facility. The rooms were not cleaned frequently. I hope the management looks into it."</br></br></br></br></br></br></br></br></br></br></br></br>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+	<hr>
+	
+	<H2><p><center>OUR FACILITIES</CENTER></P></H2>
+
+<table style="width:100%; margin:0 auto;">
+<tr >   
+    <td width="45%" valign="top" style="">
+    	<div style=" padding-left:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\g2.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:20px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\bg9.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:10px; padding-right:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\bg3.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	<td width="45%" valign="top" style="">
+    	<div style=" padding-left:35px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\e1.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:30px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\bg12.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	
+</tr></table><br><br><br><br>
+
+  </body>
+</html>
+</div>
+
+
+<div style="text-align:center;;align-content: cnter;background-color:black "  > <br><br>
+<img style="align:center" src="D:\resort\images\logo.png" width="250" height="250" alt="logo">
+ 
+  <p style="color:white;">COPYRIGHT © 2021, ALL RIGHTS RESERVED ,3 Petals Beach Resort</p>
+<p style="font-size:50px ;; color:white;"> COPYRIGHT © 2021, 3 Petals Beach Resort</p>
+</div>
+
+
+
+
+
+

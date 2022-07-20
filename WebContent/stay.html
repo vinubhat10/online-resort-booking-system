@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=XQnTxflamiET1pK1VZkk7eV7HgBh6d66cjZTCrYRFrQ6gFsT3EtCtnN5mP-aNl-6saPq0Hs2BHROMGGpIEPe71mu8a43ZY8UXxAkWH9D4P-UVkRnm9tY-aH6A741gKkBlLn_zMWUisC4vwpEvSssbj1kKxGqFBIPcPjA86UbZKA79W-o53oHAgKjyRg6C2Tso0QDLetLD-NGdECGj_dwWtzmV1hnvRAA-BbfcGHCNuLadVbLadsVhWy3gYqc_z-ZRHNPY-scv7nD9yfiA0I1zzK4VPoPXLstYVOglAFf8ln6CH1D2ocHlLi-hfGI5eXxFVVt8c-RNjP3nmDG9IXCyw" charset="UTF-8"></script><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=P7ojmLAL6Ws74rKTWzaCoE9Y1253f4-oQSMM4_XeBKGztuMPDsHFsYFPbok1vDoBHB2q8RBzci6_H7IEYOVZWfUv6akSxnu6JMoFHcz98fF-aOaZdqvhTrCB63c553lLKOtYmoSJSidumkAh7pI5XTYK2vfUagm9xi1-m3OiWB2nYKOyc82yq_g6qZu5jhSLY_rvwlNPuVa6vSPx7HvUltlgKpFkJXEgx6SB9sOy9NYZ5s1nCroIZafbnIInHfMTc-jDf7iwVetyoDwHzuerNQxSynX3GOOBB-Wm_eSdSTH0wOghDQXAiyTpEON63nOzxw-r-ece8apji8Xdg-gwEg" charset="UTF-8"></script><style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:black;
+}
+
+li {
+  float:left;
+ vertical-align:center;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: grey;
+}
+body {
+  font-family: "Lato", sans-serif;
+   background-image: url("images/bk.jpg");
+   background-size:cover;
+   background-repeat:repeat;
+   }
+   
+   img{
+   border: 1px solid black;
+   border-style:inset;
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  
+  right:0;
+  background-color:rgb(0, 0, 0,0.8);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 125px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color:  #808080;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.glow {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 5 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+
+
+
+
+
+
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 190px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transform: scale(1.3);}
+  
+  
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+
+</head>
+<body>
+<b><div style="align:center;font-family:barabara;">
+
+
+<ul>
+  <li><a href="a.html" class="brand"><img src="images\logo.png" width="125" height="100"alt="logo"></a></li>
+  <li  style="margin-top:34px"><a  href="home.html">HOME</a></li>
+  <li  style="margin-top:34px"><a  href="our.html">OUR RESORT</a></li>
+  <li  style="margin-top:34px"><a  href="stay.html">STAY</a></li>
+  <li  style="margin-top:34px"><a  href="dine.html">DINE</a></li>
+  <li  style="margin-top:34px"><a  href="events.html">EVENTS</a></li>
+  <li  style="margin-top:34px"><a  href="activities.html">ACTIVITIES</a></li>
+  <li  style="margin-top:34px"><a  href="amenities.html">AMENITIES</a></li>
+  <li  style="margin-top:34px"><a  href="gallery.html">GALLERY</a></li>
+  <li  style="margin-top:34px"><a  href="/hms11/booking">BOOKING</a></li>
+  <li  style="margin-top:34px"><a  href="/hms11/register">REGISTER</a></li>
+    <li  style="margin-top:34px"><a  href="/hms11/login">LOGIN</a></li>
+  <li  style="margin-top:34px"><a  href="aboutus.html">ABOUT US</a></li>
+  <li  style="margin-top:34px"><a href="contact.html">CONTACT</a></li>
+  <li  style="margin-top:34px"><a href="services.html">SERVICES</a></li>
+  <li  style="margin-top:34px"><a href="customer-review.html">REVIEWS</a></li>
+  <li  style="margin-top:34px"><a href="faq.html">FAQ's</a></li>
+  
+   
+ 
+  
+  
+</div>
+  </li> 
+  <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  //document.getElementById("main").style.marginLeft = "600px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+ // document.getElementById("main").style.marginLeft= "0";
+}
+</script> 
+</ul>
+</div></b>
+
+
+
+<p style="font-color:BLACK;font-size:14px;"><B><marquee behavior="scroll" direction="LEFT" scrollamount="18">AS  PER  GOVERNEMENT  GUIDELINES, OUR SWIMMING POOLS,GYM AND SOME
+ OF THE ACTIVITIES ARE CLOSED UNTIL FURTHER NOTICE.GET VACCINATED,STAY SAFE AND FIGHT THE PANDEMIC TOGETHER.</b></MARQUEE></P>
+
+
+
+
+<div>
+
+<div class="slideshow-container" >
+
+<div class="mySlides fade" >
+  <div class="numbertext">1 / 3</div>
+  <img src="images\bg3.jpg" style="width:100%">
+  <div class="text" border="1px solid"><p style=" font-size:75px ;; color:white;"> <h1 class="glow"> 3 PETALS BEACH RESORT</h1</p></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="images\bg2.jpg" style="width:100%">
+  <div class="text"><p style="font-size:75px ;; color:white;"> <h1 class="glow"> 3 PETALS BEACH RESORT</h1 </p></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="images\bg1.jpg" style="width:100%">
+  <div class="text"><p style="font-size:75px ;; color:white;"> <h1 class="glow"> 3 PETALS BEACH RESORT</h1 </p><p style="font-size:10px ;; color:white;"></p></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div> 
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</div>
+
+
+
+<div style="text-align:center;text-align-content:center;text-shadow: 0.5px 0.5px blue;">
+<p><h1><marquee behavior="scroll" direction="right" scrollamount="12">WELCOME TO 3 PETALS BEACH RESORT</marquee></h1></p></div>
+</div>
+<div style="text-align:justify;text-justify: inter-word;font-size:20px;">
+<i><b><center><h2>STAY</h2></center></b></i><br><br>
+
+<p style="padding-left:55px;padding-right:30px;"><I>Large windows with plenty of natural light, elegant artwork and thoughtful touches define each of our 74 rooms.
+For your comfort and convenience, we offer 24 hour services, cutting edge technology and sincere hospitality.</I></P>
+
+</div>
+
+<div style="padding-left:40px;padding-right:40px;"><br>
+<h3><center-left> Deluxe rooms twin beds</center-left></h3>
+<p style="text-align:justify;text-justify: inter-word;font-size:17px;">Ideal for business and leisure travellers, the Deluxe Rooms at Marquis Resort are elegantly designed to offer modern day comforts. 
+With well-appointed, spacious interiors, elegantly designed bathrooms furnished with high-quality fittings, and a balcony attached to every room, you’ll
+ notice thoughtful little touches throughout – be it the muted colour tones to soothe the senses, or the quintessentially ‘Goan’ cane weaves to add a local touch.
+Each of our 34 spacious Deluxe Rooms span 300 sq feet and are ideal for those seeking peace and relaxation by booking a hotel stay in Goa. With Twin beds,
+ you’ll be lulled to sleep in comfort. For larger groups, we also offer inter-connected Deluxe Rooms, as per availability.</p></div>
+ <br><br><table style="width:100%; margin:0 auto;">
+<tr >   
+    <td width="45%" valign="top" style="">
+    	<div style=" padding-left:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\dt1.jpg" width="550" height="300">
+		</tr>
+	      </table>
+    	   </div>      
+    </td>
+	<td width="45%" valign="top" style="">
+    	<div style=" padding-right:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\dt2.jpg" width="550" height="300">
+			      </tr></table>
+    	   </div>      
+    </td>
+	 </tr></table><br><br>
+<p><center><img src="images\dt3.jpg" width="550" height="300"></center></p>
+<br>
+<hr><br>
+
+<div style="padding-left:40px;padding-right:40px;"><br>
+<h3><center-left> Deluxe rooms with balcony</center-left></h3>
+<p style="text-align:justify;text-justify: inter-word;font-size:17px;">Ideal for business and leisure travellers, the Deluxe Rooms at Marquis Resort are elegantly designed to offer modern day comforts. With well-appointed, spacious interiors, elegantly designed bathrooms furnished with high-quality fittings, and a balcony attached to every room, you’ll notice thoughtful little touches throughout – be it the muted colour tones to soothe the senses, or the quintessentially ‘Goan’ cane weaves to add a local touch.
+Each of our 34 spacious Deluxe Rooms span 300 sq feet and are ideal for those seeking peace and relaxation by booking a hotel stay in Goa. With a King-size bed, you’ll be lulled to sleep in comfort. For larger groups, we also offer inter-connected Deluxe Rooms, as per availability.
+</p></div>
+ <br><br><table style="width:100%; margin:0 auto;">
+<tr >   
+    <td width="45%" valign="top" style="">
+    	<div style=" padding-left:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\db010.jpg" width="550" height="300">
+		</tr>
+	      </table>
+    	   </div>      
+    </td>
+	<td width="45%" valign="top" style="">
+    	<div style=" padding-right:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\db02.jpg" width="550" height="300">
+			      </tr></table>
+    	   </div>      
+    </td>
+	 </tr></table><br><br>
+<p><center><img src="images\db03.jpg" width="550" height="300"></center></p>
+<br>
+<hr><br>
+
+<div style="padding-left:40px;padding-right:40px;"><br>
+<h3><center-left>Premium Pool View Room [Twin Beds]</center-left></h3>
+<p style="text-align:justify;text-justify: inter-word;font-size:17px;">Meticulously designed and decorated, the Premium Pool View Rooms at Marquis Resort Goa provide a real sense of home away from home. Modern amenities 
+coupled with tasteful finishes are designed to lift your mood while traditional Goan accents that furnish the room are put in place to give you a sense of vacationing in Goa.
+Our Premium Pool View Rooms spans approx 300 sq feet and come with Twin beds. Washrooms are adorned with beautiful marble sink tops that compliment
+the aesthetics of the room, while a rain shower and premium toiletries are just a few of the amenities provided.
+Step into the balcony, the highlight of the rooms at Marquis Resort, on which you can sip your morning coffee as you gaze at the azure blue pool
+ below and ocean, a few meters away. A work desk also features in the room – giving you the opportunity to connect with your work-life, should you feel the need to.</p></div>
+
+ <br><br><table style="width:100%; margin:0 auto;">
+<tr >   
+    <td width="45%" valign="top" style="">
+    	<div style=" padding-left:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\pp1.jpg" width="550" height="300">
+		</tr>
+	      </table>
+    	   </div>      
+    </td>
+	<td width="45%" valign="top" style="">
+    	<div style=" padding-right:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\pp2.jpg" width="550" height="300">
+			      </tr></table>
+    	   </div>      
+    </td>
+	 </tr></table><br><br>
+<p><center><img src="images\db03.jpg" width="550" height="300"></center></p>
+<br>
+<hr><br>
+
+
+
+
+<div style="padding-left:40px;padding-right:40px;"><br>
+<h3><center-left>Premium Garden View Rooms</center-left></h3>
+<p style="text-align:justify;text-justify: inter-word;font-size:17px;">Our tastefully designed Premium Garden View Rooms offer you an experience of an escape from the everyday into a harmonious retreat.
+ Each of the 12 rooms span 300 sq feet and come with a King-sized bed, work desk, armchair, cupboard, premium linen and other amenities that fulfil every need you may have.
+An abundance of natural light filtering through large windows, refreshing décor and a relaxed ambience contributes to a zen-like look and feel.
+ When you book a Premium Room with Balcony and Garden View at Marquis Resort, you will be treated to views of the well-manicured gardens as well as 
+ enjoy partial views of the beach and swimming pool. The graceful design and plush interiors make sure that you cherish your stay in Goa.
+</p></div>
+ <br><br><table style="width:100%; margin:0 auto;">
+<tr >   
+    <td width="45%" valign="top" style="">
+    	<div style=" padding-left:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\pg1.jpg" width="550" height="300">
+		</tr>
+	      </table>
+    	   </div>      
+    </td>
+	<td width="45%" valign="top" style="">
+    	<div style=" padding-right:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\pg2.jpg" width="550" height="300">
+			      </tr></table>
+    	   </div>      
+    </td>
+	 </tr></table><br><br>
+	 <br>
+	
+
+
+
+
+
+<div style="padding-left:40px;padding-right:40px;"><br>
+<h3><center-left>Executive Premium Sea View with Double Balcony</center-left></h3>
+<p style="text-align:justify;text-justify: inter-word;font-size:17px;">Our most sought after rooms at Marquis Resort, the Executive Premium Sea View with Double Balcony boasts of a privileged location, offering guests astonishing views of the ocean straight ahead. An excellent choice for discerning guests and couples seeking luxury accommodation in Goa, the spacious room features not one, but two balconies with comfortable chairs on each.
+Go ahead and enjoy the contemporary elegance of your room designed in muted tones in keeping with Marquis Resort brand and relax in absolute harmony as you enjoy breezy, breath-taking views of the awe-Inspiring Arabian Sea.
+These captivating romantic rooms comprise of a double bed, work desk, cupboard, and en-suite bathrooms and wooden accents, along with a host of amenities such as a tea-coffee maker, mini-bar and toiletries. Our guests’ every desire and comfort is anticipated – from fine sheets to discreet housekeeping and from soundless central air-conditioning to high speed internet.
+Our 4 Executive Premium Rooms are located either on the upper level or on the ground floor and is the only category of rooms to feature the Marquis Resort signature motif along the flooring.
+
+</p></div>
+ <br><br><table style="width:100%; margin:0 auto;">
+<tr >   
+    <td width="45%" valign="top" style="">
+    	<div style=" padding-left:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\ep1.jpg" width="550" height="300">
+		</tr>
+	      </table>
+    	   </div>      
+    </td>
+	<td width="45%" valign="top" style="">
+    	<div style=" padding-right:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\ep2.jpg" width="550" height="300">
+			      </tr></table>
+    	   </div>      
+    </td>
+	 </tr></table><br><br>
+<p><center><img src="images\db03.jpg" width="550" height="300"></center></p>
+<br>
+
+<hr><br>
+
+<div style="padding-left:40px;"><br>
+<h1><b><strong>Room Amminities</strong></b></h1>
+<h3><ol>
+	<li>Centrally Air-Conditioned Rooms</li><br>
+ <li>Tea/Coffee Maker</li><br>
+	 <li>Mini bar</li><br>
+<li>Electronic Safe Deposit Lockers</li><br>
+	 <li>Laundry Service (on request)</li><br>
+	<li>Free Wi-fi</li><br>
+	 <li>Hair Dryer (on request)</li><br>
+	<li>Hot/Cold Water</li><br>
+	<li>Smoke Detector</li><br>
+	<li>Premium Toiletries</li><br>
+	<li>Rain Shower</li><br>
+	<li>Electronic Iron (on request)</li><br>
+	<li>Samsung Smart TV</li><br>
+	<li>Weighing Scale</li><br>
+</ol></h3></div></div>
+
+<div style="padding-left:40px;"><br>
+<p>
+<h3>Delay in Travel Policy:</h3>
+
+In case of guest-facing delay or cancellation of flight or train or road trip due to any unforeseen reason,
+ the room cancellation charges will remain applicable as per the applicable cancellation policy. Such unforeseen trip 
+ cancellation may not be manifested as the waiver of cancellation charges by any Summit Hotels & Resorts.
+
+<h3>Currency Converter:</h3> 
+
+Currency conversion data is provided by XE, a third party currency conversion provider, using live mid-market rates. 
+This information is offered for informational purposes only and does not reflect the rate you will pay to the hotel or the 
+currency in which such payment will be made. All payments will have to be made in Indian rupee.
+
+
+<h3>Standard Discount Policy:</h3><br> 
+
+Not two discounts/offers/benefits can be clubbed together.<br>
+
+
+<h3>TA Commission Policy:</h3> 
+
+Travel Agents registered with IATA can claim a 10% commission on public rates at the time of booking the room reservation only.
+
+
+<h3>Stay Extension: </h3>
+
+An extension of stay at the hotel is liable to be offered at rate/offer applicable at the time the extension request is made. In case, the original offer at which the reservation was booked has expired at that time, the hotel is not liable to offer a room at the original rates but at current rates on offer.
+
+
+<h3>Rights Reserved:</h3>
+Our Resort reserves the right to refuse or cancel any reservation without prior information.Our Resort reserves the right to refusecheck-in in the absence of a valid identification document.
+<h3>Standard Rate Inclusions:</h3>
+
+All our rates are inclusive of accommodation in a spacious and elegantly appointed room and breakfast for two adults. 
+
+<h3>Standard Guarantee Policy: </h3><br>
+
+One night's advance payment or credit card authorization is required to confirm the reservation. Full stay advance payment is required 10 days prior to arrival, failing which, the room will be released.
+
+
+<h3>Standard Modification/Cancellation Policy:</h3> 
+
+No penalty for modification or cancellation 15 days or more prior to the arrival date. The entire stay amount will be charged for modification or cancellation within 15 days of the arrival date.
+
+PS: All standard Policies are applicable when specific reservation policy is not mentioned in the “Reservation Confirmation  document.
+
+
+<h3>Payment Policy:</h3> 
+
+Payment can be made using the credit card, payment gateway link, deposit in the bank account or demand draft before the due date.
+Applicable Taxes- Taxes are as applicable at the time of reservation.
+
+
+<h3>Arrival & Departure Policy:</h3>
+ Check-in time is 1400 hours while Check-out time is 1200 hours for all Summit Hotels & Resorts. Early check-in and late check-out are chargeable as per the hotel policy. It is mandatory for guests to present valid photo identification at the time of check-in. Such documents can be either an Indian Aadhaar Card, Indian Driver’s License, Indian Voter ID card or Indian or International passport. PAN cards are not accepted. Summit Hotels & Resorts reserves the right to refuse check-in in the absence of a valid identification document. The primary age for all the guests must be at least 18yearss, to check -in all Summit Hotels & Resorts.
+
+
+<h3>Additional Guest Policy:</h3> 
+Summit Hotels & Resorts operate only on double occupancy per room basis with a maximum occupancy of up to 3 guests. Extra guests above the age of 12 years being accommodated in the same room along with two adults, taking an extra bed may be accommodated at a charge. This policy is applicable for reservations in Deluxe Room, Premium Room, and Suite Rooms. Family Rooms at Summit Hotels & Resorts, however, can accommodate up to 4 guests above the age of 12 years.
+
+
+<h3>Child Policy:</h3>
+Child Sharing for up to two children below 5 years without an extra bed is complimentary. Child Sharing for 1 child above 5 years without an extra bed is charged only for meals and stay. In case of a requirement for an extra bed in the room, charges shall be the same as adult guest sharing charges.
+
+
+<h3>Early Check-In and Late Check-Out Policy:</h3>
+
+Early Check-In and/or Late Check-Out will be charged at INR 200 per hour (subject to availability of rooms)
+
+<h3>Other Charges:</h3>
+
+Extra Bed: INR 2000 plus taxes per person .
+Child No Bed: INR 1000 plus taxes per child.</p>
+</div>
+<br><br><hr>
+
+<H2><p><center>OUR FACILITIES</CENTER></P></H2>
+
+<table style="width:100%; margin:0 auto;">
+<tr >   
+    <td width="45%" valign="top" style="">
+    	<div style=" padding-left:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\g2.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:20px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\bg9.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:10px; padding-right:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\bg3.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	<td width="45%" valign="top" style="">
+    	<div style=" padding-left:35px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\e1.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:30px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="images\bg12.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	
+</tr></table><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+<div style="text-align:center;;align-content: cnter;background-color:black "  > <br><br>
+<img style="align:center" src="images\logo.png" width="250" height="250" alt="logo">
+ 
+  <p style="color:white;">COPYRIGHT © 2016, ALL RIGHTS RESERVED 3 PETALS BEACH RESORT</p>
+<p style="font-size:30px ;; color:white;"> COPYRIGHT © 2016, ALL RIGHTS RESERVED 3 PETALS BEACH RESORT</p>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

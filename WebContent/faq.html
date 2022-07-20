@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=_9TWX-mm1fsQzVG0MsmXacR7bQYQWdFr__huBOkECMfP4l_ego-7miVEi32G3BkgqlP_95xLi9uCAzFRdCGjUDcfYxfkSIQZVXlL2MRDCppExT5mOxY77ajgQfEPPEHNHVFsK5epgRhkiHDwDEPgWxqo6I937JuAq1uPeR80kj5Z7pvYYOZzxmmdtiXoSd_zALEr_FPMcMzmQcYdSsC5NQV3jAVJk5cqYTvKbdO-2Wu-OAfNtFPFHTzkQM2Xthv45Si9gGKSUCMDseDb9zKvIO7IYRAUjtA48WGlUnDvalpiAuYPDBDVyPP7ylgb61Z5bHcL55nZb7lKhhVUr-NkRg" charset="UTF-8"></script><style>
+body {
+  font-family: "Arial", sans-serif;
+   background-image: url("bk.jpg");
+   background-size:cover;
+   background-repeat:repeat;
+   }
+   
+    img{
+  
+  border: 1px solid black;
+  padding: 15px;
+  box-shadow: 5px 10px;
+}
+
+
+
+.faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+.faq-list li {
+    margin: 30px 0;
+  border: 1px solid rgb(205, 205, 205);
+    padding: 27px 30px;
+    margin: 0px auto 30px;
+    text-align: left;
+    width: 550px;
+}
+
+
+.faq-list .faq-heading::before {
+    content: '+';
+   font-size: 40px;
+    display: block;
+    position: absolute;
+   right:0;
+    top: -8px;
+  color:#c2c2c2;
+}
+
+.faq-list .the-active .faq-heading::before {
+    content: '-';
+  
+}
+
+.faq-heading {
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+  font-weight: 400;
+  margin:0;
+}
+
+.faq-heading:hover {
+    color: var(--theme-color);
+}
+
+.faq-text {
+    display: none;
+}
+.container {
+  width: 1200px;
+  margin: auto;
+}
+.art-box svg {
+  width:100%;
+}
+.row {
+  display:flex;
+}
+.row .col {
+  flex-basis: 50%;
+}
+.read {
+    color: rgb(100, 100, 100);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 25px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float:left;
+ vertical-align:center;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: grey;
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  
+  right:0;
+  background-color:rgb(0, 0, 0,0.8);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 125px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color:  #808080;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.amencontent{
+align: center;
+}
+
+.glow {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 5 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+
+
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 190px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.accordion {
+  background-color: rgb(255,255,255);
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  font-family: "Arial", sans-serif;
+  
+}
+
+.active, .accordion:hover {
+  color: rgba(128,68,97,1);
+}
+
+.panel {
+  padding: 0 18px;
+  background-image: url("bk.jpg");
+   background-size:cover;
+   background-repeat:repeat;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-bottom:4px;
+  align:left;
+  font-family: "Arial", sans-serif;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  transform: scale(1.3);
+  }
+
+
+.active:after {
+  content: "\2212";
+}
+</style>
+<%String isAdmin1="false";
+ if(null != session.getAttribute("isAdmin") )
+ isAdmin1=(String)session.getAttribute("isAdmin"); 
+ System.out.println("is admin +++++++++++++++++++++++++++++++++++++++++++"+isAdmin1); 
+ %>
+</head>
+<body>
+<b><div style="align:center;font-family:barabara;">
+
+
+<ul>
+  <li><a href="index.html" class="brand"><img src="D:\resort\images\logo.png" width="125" height="100"alt="logo"></a></li>
+  <li  style="margin-top:34px"><a  href="home.html">HOME</a></li>
+  <li  style="margin-top:34px"><a  href="our.html">OUR RESORT</a></li>
+  <li  style="margin-top:34px"><a  href="stay.html">STAY</a></li>
+  <li  style="margin-top:34px"><a  href="dine.html">DINE</a></li>
+  <li  style="margin-top:34px"><a  href="events.html">EVENTS</a></li>
+  <li  style="margin-top:34px"><a  href="activities.html">ACTIVITIES</a></li>
+  <li  style="margin-top:34px"><a  href="amenities.html">AMENITIES</a></li>
+  <li  style="margin-top:34px"><a  href="gallery.html">GALLERY</a></li>
+  <li  style="margin-top:34px"><a  href="/hms11/booking">BOOKING</a></li>
+   <li  style="margin-top:34px"><a  href="/hms11/register">Register</a></li>
+    <li  style="margin-top:34px"><a  href="/hms11/login">login</a></li>
+  <li  style="margin-top:34px"><a  href="aboutus.html">ABOUT US</a></li>
+  <li  style="margin-top:4px"><a   href="home.html"> <div id="main"><button class="openbtn" onclick="openNav()">â°</button> 
+ 
+  <%if(isAdmin1 != null && isAdmin1.equals("true")){%>
+	  <li  style="margin-top:34px"><a  href="Vacant.jsp">Vacant Room</a></li>
+   <% }%>
+  
+</div><div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Ã</a>
+  <a href="contact.html">CONTACT</a>
+  <a href="services.html">SERVICES</a>
+  <a href="customer-review.html">CUSTOMER REVIEWS</a>
+  <a href="faq.html">FAQ's</a>
+</div>
+  </li> 
+  <script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  //document.getElementById("main").style.marginLeft = "600px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+ // document.getElementById("main").style.marginLeft= "0";
+}
+</script> 
+</ul>
+</div></b>
+
+
+
+<p style="font-color:BLACK;font-size:14px;"><B><marquee behavior="scroll" direction="LEFT" scrollamount="18">AS  PER  GOVERNEMENT  GUIDELINES, OUR SWIMMING POOLS,GYM AND SOME
+ OF THE ACTIVITIES ARE CLOSED UNTIL FURTHER NOTICE.GET VACCINATED,STAY SAFE AND FIGHT THE PANDEMIC TOGETHER.</b></MARQUEE></P>
+
+
+
+
+<div>
+
+<div class="slideshow-container" >
+
+<div class="mySlides fade" >
+  <div class="numbertext">1 / 3</div>
+  <img src="D:\resort\images\c1.jpg" style="width:100%">
+  <div class="text" border="1px solid"><p style=" font-size:75px ;; color:white;"><h1 class="glow"> 3 PETALS BEACH RESORT</p></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="D:\resort\images\ev12.jpg" style="width:100%">
+  <div class="text"><p style="font-size:75px ;; color:white;"><h1 class="glow"> 3 PETALS BEACH RESORT</p></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="D:\resort\images\ev10.jpg" style="width:100%">
+  <div class="text"><p style="font-size:75px ;; color:white;"><h1 class="glow"> 3 PETALS BEACH RESORT</p></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div> 
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</div>
+<div class = "amencontent" style="text-align:center; align-content:center; background-image:url("bk.jpg");> 
+<p style="font-size:50px ;; color:black; text-shadow:2px 2px 3px black;">FAQ'S</p>
+<div >
+
+<button class="accordion">Does your resort follow all the social distancing measures?</button>
+<div class="panel">
+ <p>Yes, our resort follows all the measures. contactless hand sanitizing , temperature checking etc have been situated at each significant in our resort.</p>
+</div>
+
+<button class="accordion">Is contactless room food delivery taken care of?</button>
+<div class="panel">
+<p>Yes,it is taken care and food will be delivered safely.</p>
+</div>
+
+<button class="accordion">Is Pool and activity area open?</button>
+<div class="panel">
+<p>No, due to COVID guidlines it is being closed.</p>
+</div>
+
+<button class="accordion">Hoe to book a room at your Hotel?</button>
+<div class="panel">
+  <p>How to book a room at your Hotel?
+We have two options
+1.Online Booking
+2.Phone Booking
+You can call us on 1122334455 / 1212121212 / 2345234523 or drop a email to info@3PetalsBeachResort.com</p>
+</div>
+
+<button class="accordion">Check-in Check-out Time?</button>
+<div class="panel">
+ <p>The Check-in time is after 12 P.M and Check-out time is before 11 A.M on week-ends and 24hrs check-in on weekdays depending on the availability of rooms.</p>
+</div>
+
+<button class="accordion">What are the documents to Check-in?</button>
+<div class="panel">
+ <p>For Indian Nationals, any of the Government Approved Photo ID Proof with address like Aadhar Card, Driving Licence, Passport, Voter ID. For Foreign Nationals- Passport and Valid Visa.</p>
+</div>
+
+<button class="accordion">What are the hours of operation for Restaurent, Room Service and Bar?</button>
+<div class="panel">
+ <p>Restaurant â€“ 7 A.M to 10 P.M
+Room Service â€“ 6 A.M to 10.30 P.M
+Bar â€“ Temporarily closed</p>
+</div>
+
+<button class="accordion">Do you have offers for Bulk Booking and Corporate Booking?</button>
+<div class="panel">
+ <p>Yes, Please call us on 1122334455 / 1212121212 / 2345234523 for offers</p>
+</div>
+
+<button class="accordion">Is there wi-fi connection at your resort?</button>
+<div class="panel">
+ <p>We provide a wi-fi connection at lobby and not in rooms.</p>
+</div>
+
+<button class="accordion">How good is this resort for family?</button>
+<div class="panel">
+ <p>It is indeed a resort of greenery and great for families with a kids play area. We give utmost importance to guest security, cleanliness and hygiene.</p>
+</div>
+
+<button class="accordion">What does 3 Petals Beach Resort offer other than Rooms?</button>
+<div class="panel">
+ <p>We do have day-outing packages and 3 banquet halls for Conference and parties.
+
+General Terms and Conditions for Day-Outing Packages.</p>
+</div>
+
+<button class="accordion">Do you allow pets to stay atyour hotel?</button>
+<div class="panel">
+ <p>Yes, Pets are allowed at the hotel.</p>
+</div>
+
+<button class="accordion">What is the timing for Swimming Pool and Beach access?</button>
+<div class="panel">
+ <p>Swimming Pool : 7 A.M to 7 P.M
+Beach Access : 5 A.M to 10.30 P.M</p>
+</div>
+
+<button class="accordion">Do you have high speed internet access at your resort?</button>
+<div class="panel">
+ <p>High Speed Internet is available in all areas inside the property and it is complimentary.</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+</div>
+
+
+
+<H2><p><center>OUR FACILITIES</CENTER></P></H2>
+
+<table style="width:100%; margin:0 auto;">
+<tr >   
+    <td width="45%" valign="top" style="">
+    	<div style=" padding-left:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\g2.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:20px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\bg9.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:10px; padding-right:40px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\bg3.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	<td width="45%" valign="top" style="">
+    	<div style=" padding-left:35px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\e1.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div>      
+    </td>
+	
+	<td width="45%" valign="top" style="">
+     <div style=" padding-left:20px; padding-right:30px;"><br>
+    	    <table  align="center" bgcolor="white">
+		<tr>
+		<img src="D:\resort\images\bg12.jpg" width="250" height="200">
+		
+		</tr>	
+	</table>
+    	   </div> 	
+	</td>   
+	
+</tr></table><br><br><br><br>
+
+
+
+
+
+
+<div style="text-align:center;;align-content: cnter;background-color:black "  > <br><br>
+<img style="align:center" src="D:\resort\images\logo.png" width="250" height="250" alt="logo">
+ 
+  <p style="color:white;">COPYRIGHT Â© 2021, ALL RIGHTS RESERVED ,3 Petals Beach Resort</p>
+<p style="font-size:50px ;; color:white;"> COPYRIGHT Â© 2021, 3 Petals Beach Resort</p>
+</div>
+
+
+
+
+
+
